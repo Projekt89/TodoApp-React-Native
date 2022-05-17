@@ -1,0 +1,61 @@
+lesson 1-4 basics
+
+
+app
+export default function App() {
+  const [name, setName] = useState('shaun')
+
+  function changeName() {
+    setName(names[Math.floor(Math.random() * names.length)])
+  }
+
+  const clickHandler = () => {
+    changeName()
+  }
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.boldText}>Open up App.js to start working on your app!!!!</Text>
+        <StatusBar style="auto" />
+      </View>
+      <View style={styles.body}>
+        <Text>Reprehenderit ad incididunt commodo eu tempor adipisicing.</Text>
+        <Text>Reprehenderit ad incididunt commodo eu tempor adipisicing.</Text>
+        <Text>Reprehenderit ad incididunt commodo eu tempor adipisicing.</Text>
+      </View>
+      <View>
+        <Text>My name is {name} </Text>
+        <View style={styles.buttonContainer}>
+          <Button title={'update state'} onPress={clickHandler} />
+        </View>
+      </View>
+    </View>
+  );
+}
+
+
+styles
+container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    marginTop: 20,
+  },
+  boldText: {
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+  },
+  header: {
+    backgroundColor: 'pink',
+    padding: 20,
+    width: '100%',
+  },
+  body: {
+    backgroundColor: 'yellow',
+    padding: 20,
+    width: '100%',
+  }
